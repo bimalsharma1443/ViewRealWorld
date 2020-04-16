@@ -1,19 +1,20 @@
 <template>
     <div>
-        <h1>Event {{ userName }}</h1>
-        <p>This is event is created by {{ userName }}</p>
+        <h1>Event {{ $store.state.user.name }}</h1>
+        <p>This is event is created by {{ user.name }}</p>
+        <ul>
+            <li v-for="category in categories" :key="category">{{ category }}</li>
+        </ul>
     </div>
 </template>
 
 <script>
 
-import {mapAction} from 'vuex'
+import {mapState} from 'vuex'
 
 export default {
     computed : {
-        userName() {
-            return this.$store.state.user.name;
-        }
+        ...mapState(['user','categories'])
     }
 }
-</script>
+</script>s
