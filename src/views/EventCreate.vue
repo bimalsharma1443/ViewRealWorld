@@ -34,7 +34,7 @@
       <h3>When is your event?</h3>
       <div class="field">
         <label>Date</label>
-        <datepicker v-model="event.date" placeholder="Select a date"/>
+        <datepicker v-model="event.date" placeholder="Select a date" />
       </div>
       <div class="field">
         <label>Select a time</label>
@@ -71,23 +71,23 @@ export default {
       const id = Math.floor(Math.random() * 1000000);
       alert(id);
       return {
-        id:id,
-        category: '',
+        id: id,
+        category: "",
         organizer: user,
-        title: '',
-        description: '',
-        location: '',
-        date: '',
-        time: '',
+        title: "",
+        description: "",
+        location: "",
+        date: "",
+        time: "",
         attendees: []
-      }
+      };
     },
     formSubmit() {
       alert(event.id);
       this.$store.dispatch("createEvent", this.event).then(() => {
         this.$router.push({
-          name: 'EventShow',
-          params : {id:this.event.id}
+          name: "EventShow",
+          params: { id: this.event.id }
         });
         this.event = this.createFreshEvent();
       });
