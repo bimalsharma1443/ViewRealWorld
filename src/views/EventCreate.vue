@@ -18,15 +18,11 @@
 <script>
 
 import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
     computed : {
-        catLength() {
-            return this.$store.getters.catLength;
-        },
-        doneTodo() {
-            return this.$store.getters.doneTodo;
-        },
+        ...mapGetters(['catLength','doneTodo']),
         notActiveTodoCount() {
             return this.$store.getters.notActiveTodoCount;
         },
