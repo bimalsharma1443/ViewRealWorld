@@ -142,6 +142,20 @@
       "date": "2020-04-01T07:54:00.000Z",
       "time": "17:00",
       "attendees": []
+    },
+    {
+      "id": 502758,
+      "category": "education",
+      "organizer": {
+        "id": "1",
+        "name": "Bimal Sharma"
+      },
+      "title": "Title By Bimal",
+      "description": "this is descriptions",
+      "location": "Mumbai",
+      "date": "2020-04-02T11:29:00.000Z",
+      "time": "19:00",
+      "attendees": []
     }
   ]
 }
