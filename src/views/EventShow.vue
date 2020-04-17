@@ -33,7 +33,7 @@ import { mapState /*, mapActions*/ } from "vuex";
 // import store from "@/store/";
 
 export default {
-  // props: ["id"],
+  props: ["id"],
   // beforeRouteEnter(routeTo, routeFrom, next) {
   //   Nprogress.start();
   //   store.dispatch("event/getEvent", routeTo.params.id).then(() => {
