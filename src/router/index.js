@@ -12,7 +12,8 @@ const routes = [
   {
     path: "/",
     name: "EventList",
-    component: EventList
+    component: EventList,
+    props: true
   },
   {
     path: "/event/:id",
@@ -20,7 +21,7 @@ const routes = [
     component: EventShow,
     props: true,
     beforeEnter(routeTo, routeFrom, next) {
-      Store.dispatch("event/getEvent", routeTo.params.id).then((event) => {
+      Store.dispatch("event/getEvent", routeTo.params.id).then(event => {
         routeTo.params.event = event; // set the event we recieved and set props
         next();
       });

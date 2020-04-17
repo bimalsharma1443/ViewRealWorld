@@ -5,7 +5,8 @@ export const namespaced = true;
 export const state = {
   events: [],
   totalEvent: 0,
-  event: []
+  event: [],
+  perPage: 2
 };
 
 export const mutations = {
@@ -25,14 +26,14 @@ export const mutations = {
 
 export const actions = {
   createEvent({ commit }, event) {
-    EventService.postEvent(event).then(() => {
+    return EventService.postEvent(event).then(() => {
       commit("ADD_EVENT", event);
     });
   },
-  getEvents({ commit, dispatch, rootState }, { perPage, page }) {
+  getEvents({ commit, dispatch, rootState, state }, { page }) {
     console.log("user event is " + rootState.user.user.name);
     dispatch("user/actionCall", null, { root: true });
-    EventService.getEvents(perPage, page)
+    return EventService.getEvents(state.perPage, page)
       .then(response => {
         commit("SET_TOTAL", parseInt(response.headers["x-total-count"]));
         commit("SET_EVENTS", response.data);
