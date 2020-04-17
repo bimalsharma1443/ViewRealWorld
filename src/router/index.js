@@ -20,7 +20,8 @@ const routes = [
     component: EventShow,
     props: true,
     beforeEnter(routeTo, routeFrom, next) {
-      Store.dispatch("event/getEvent", routeTo.params.id).then(() => {
+      Store.dispatch("event/getEvent", routeTo.params.id).then((event) => {
+        routeTo.params.event = event; // set the event we recieved and set props
         next();
       });
     }
