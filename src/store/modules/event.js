@@ -53,14 +53,10 @@ export const actions = {
       commit("SET_EVENT", event);
       return event;
     } else {
-      return EventService.getEvent(id)
-        .then(response => {
-          commit("SET_EVENT", response.data);
-          return response.data;
-        })
-        .catch(error => {
-          console.log("There was an error:", error.response);
-        });
+      return EventService.getEvent(id).then(response => {
+        commit("SET_EVENT", response.data);
+        return response.data;
+      });
     }
   }
 };
