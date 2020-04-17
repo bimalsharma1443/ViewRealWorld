@@ -28,17 +28,35 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
+import Nprogress from "nprogress";
+import store from "@/store/";
 
 export default {
   props: ["id"],
-  created() {
-    this.getEvent(this.id);
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    Nprogress.start();
+    store.dispatch("event/getEvent", routeTo.params.id).then(() => {
+      Nprogress.done();
+      next();
+    });
   },
+  beforeRouteUpdated(routeTo, routeFrom, next) {
+    console.log(routeTo, routeFrom);
+    next();
+  },
+  beforeRouteLeave(routeTo, routeFrom, next) {
+    console.log(routeTo, routeFrom);
+    next();
+  },
+  // created() {
+  //   this.getEvent(this.id);
+  // },
   computed: mapState({
     event: state => state.event.event
-  }),
-  methods: mapActions("event", ["getEvent"])
+  })
+  // ,
+  // methods: mapActions("event", ["getEvent"])
 };
 </script>
 
