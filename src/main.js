@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import "nprogress/nprogress.css";
+
 // Auto registering a base component
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";

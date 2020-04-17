@@ -11,7 +11,7 @@ export const mutations = {
     state.notifications.push({
       ...notification,
       id: nextId++
-		});
+    });
   },
   DELETE: (state, notificationToRemove) => {
     state.notifications = state.notifications.filter(

@@ -100,6 +100,20 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "id": 92254,
+      "category": "animal welfare",
+      "organizer": {
+        "id": "1",
+        "name": "Bimal Sharma"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
